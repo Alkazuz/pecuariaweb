@@ -1,5 +1,5 @@
-type MaxNumberProps = number | undefined | null;
-type MinNumberProps = number | undefined | null;
+type MaxNumberProps = number | undefined | null
+type MinNumberProps = number | undefined | null
 
 /**
  * I.E: Call function without parameters
@@ -13,14 +13,14 @@ function randomNumberFromInterval(
   min: MinNumberProps,
   max: MaxNumberProps
 ): number {
-  const maxNumber = max ?? 1;
-  const minNumber = min ?? 0;
+  const maxNumber = max ?? 1
+  const minNumber = min ?? 0
 
   const number = Math.floor(
     Math.random() * (maxNumber - minNumber + 1) + minNumber
-  );
+  )
 
-  return number;
+  return number
 }
 
-export default randomNumberFromInterval;
+export default randomNumberFromInterval

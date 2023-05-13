@@ -1,8 +1,8 @@
-import { screen } from '@testing-library/react';
+import { screen } from '@testing-library/react'
 
-import { renderWithTheme } from 'utils';
+import { renderWithTheme } from 'utils'
 
-import Main from './Main';
+import Main from './Main'
 
 describe('<Main />', () => {
   it('should render the component', () => {
@@ -10,12 +10,12 @@ describe('<Main />', () => {
       <Main>
         <h1>Next Example</h1>
       </Main>
-    );
+    )
 
     expect(
       screen.getByRole('heading', { name: /Next Example/i })
-    ).toBeInTheDocument();
+    ).toBeInTheDocument()
 
-    expect(container).toMatchSnapshot();
-  });
-});
+    expect(container).toMatchSnapshot()
+  })
+})

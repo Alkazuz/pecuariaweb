@@ -4,5 +4,5 @@
  * @returns boolean
  */
 export const checkIsNumeric = (value: string): boolean => {
-  return /^-?\d+$/.test(value);
-};
+  return /^-?\d+$/.test(value)
+}

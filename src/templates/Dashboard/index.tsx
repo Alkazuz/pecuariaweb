@@ -1,8 +1,8 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
-import { Main } from 'components/Main/';
+import { Main } from 'components/Main/'
 
-import * as S from './styles';
+import * as S from './styles'
 
 const Dashboard = () => {
   return (
@@ -14,7 +14,7 @@ const Dashboard = () => {
         <Link href="/about">About</Link>
       </S.Container>
     </Main>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard

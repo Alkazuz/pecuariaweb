@@ -1,4 +1,4 @@
-import { createGlobalStyle, css } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -63,6 +63,6 @@ const GlobalStyles = createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
-`;
+`
 
-export default GlobalStyles;
+export default GlobalStyles

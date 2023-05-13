@@ -1,4 +1,4 @@
-import { faker } from '@faker-js/faker';
+import { faker } from '@faker-js/faker'
 
 function generateArray() {
   return faker.random
@@ -7,7 +7,7 @@ function generateArray() {
     .map(() => ({
       id: faker.datatype.uuid(),
       name: faker.random.word()
-    }));
+    }))
 }
 
-export default generateArray;
+export default generateArray

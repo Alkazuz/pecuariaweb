@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
-import { Main } from 'components/Main';
+import { Main } from 'components/Main'
 
 export default function AboutPage() {
   return (
@@ -9,5 +9,5 @@ export default function AboutPage() {
 
       <Link href="/">Dashboard</Link>
     </Main>
-  );
+  )
 }

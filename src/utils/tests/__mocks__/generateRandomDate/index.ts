@@ -3,12 +3,12 @@
  * @returns Date
  */
 function generateRandomDate(): Date {
-  const currentDate = Date.now();
-  const timestamp = Math.floor(Math.random() * currentDate);
+  const currentDate = Date.now()
+  const timestamp = Math.floor(Math.random() * currentDate)
 
-  const randomDateGenerated = new Date(timestamp + currentDate);
+  const randomDateGenerated = new Date(timestamp + currentDate)
 
-  return randomDateGenerated;
+  return randomDateGenerated
 }
 
-export default generateRandomDate;
+export default generateRandomDate
