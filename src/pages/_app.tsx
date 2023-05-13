@@ -2,25 +2,22 @@ import { AppProps } from 'next/app'
 import Head from 'next/head'
 
 import { ChakraProvider } from '@chakra-ui/react'
-import { ThemeProvider } from 'styled-components'
-
-import GlobalStyles from 'styles/global'
-import theme from 'styles/theme'
+import { CHACKRA_UI_THEME } from 'constants/app'
+import { AuthProvider } from 'contexts/AuthContext'
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider>
-      <ThemeProvider theme={theme}>
-        <Head>
-          <title>App Name</title>
-          <link rel="shorcut icon" href="/img/bg.png" />
-          <link rel="apple-touch-icon" href="/img/bg.png" />
-          <link rel="manifest" href="/manifest.json" />
-          <meta name="description" content="App Name" />
-        </Head>
+    <ChakraProvider theme={CHACKRA_UI_THEME}>
+      <Head>
+        <title>App Name</title>
+        <link rel="shorcut icon" href="/img/bg.png" />
+        <link rel="apple-touch-icon" href="/img/bg.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="description" content="App Name" />
+      </Head>
+      <AuthProvider>
         <Component {...pageProps} />
-        <GlobalStyles />
-      </ThemeProvider>
+      </AuthProvider>
     </ChakraProvider>
   )
 }
