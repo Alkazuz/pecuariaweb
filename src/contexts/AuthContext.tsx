@@ -1,15 +1,16 @@
+import Router from 'next/router'
 import React, { createContext, useState, useEffect } from 'react'
-import { set } from 'react-hook-form'
 
+import Cookies from 'js-cookie'
 import api from 'services/api'
 
 export const AuthContext = createContext<AuthContextType>({} as AuthContextType)
 
 type AuthContextType = {
   user: User | undefined
-  loading: boolean
-  login: (email: string, password: string) => void
-  logout: () => void
+  login: (email: string, password: string) => Promise<void>
+  logout: () => Promise<void>
+  isLogged: boolean
 }
 
 export type User = {
@@ -31,34 +32,30 @@ export const AuthProvider = ({
   children: React.ReactNode | Array<React.ReactNode>
 }) => {
   const [user, setUser] = useState<User | undefined>()
-  const [token, setToken] = useState<string | undefined>()
-  const [loading, setLoading] = useState(true)
+  const [isLogged, setIsLogged] = useState(false)
 
   useEffect(() => {
-    // Aqui você deve interagir com um serviço de autenticação
-    // Por exemplo, verificar se o usuário já está logado
-    // e, em caso afirmativo, definir o estado do usuário.
-    // Após a conclusão, você deve definir o estado de carregamento como false.
-
-    setLoading(false)
-  }, [])
+    setIsLogged(!!user)
+  }, [user])
 
   const login = async (email: string, password: string) => {
-    const { data } = await api.post<LoginResponse>('/login', {
+    const { data } = await api.post<LoginResponse>('/auth/login', {
       email,
       password
     })
     setUser(data.user)
-    setToken(data.token)
+    Cookies.set('authToken', data.token, { expires: 1 })
   }
 
-  const logout = () => {
-    // Aqui você faria logout do usuário, possivelmente invalidando uma sessão no seu backend
-    // Em seguida, você deve definir o estado do usuário como null.
+  const logout = async () => {
+    Cookies.remove('authToken')
+    setUser(undefined)
+    await api.get('/auth/logout')
+    Router.push('/')
   }
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, loading, token }}>
+    <AuthContext.Provider value={{ user, isLogged, login, logout }}>
       {children}
     </AuthContext.Provider>
   )

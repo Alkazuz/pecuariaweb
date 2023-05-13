@@ -4,6 +4,9 @@ export const APP_NAME = 'Sistema Pecuária'
 export const PRIMARY_APP_COLOR = '#81b33b'
 export const CHACKRA_UI_THEME = extendTheme({
   colors: {
+    primary: {
+      main: PRIMARY_APP_COLOR
+    },
     brand: {
       900: '#1a365d',
       800: '#153e75',
