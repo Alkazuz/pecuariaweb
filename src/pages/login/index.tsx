@@ -59,6 +59,7 @@ export default function Login() {
             <FormControl id="email" isInvalid={!!errors.email}>
               <FormLabel>Email</FormLabel>
               <Input
+                placeholder="Digite seu email"
                 focusBorderColor={PRIMARY_APP_COLOR}
                 type="email"
                 {...register('email', {
@@ -76,6 +77,7 @@ export default function Login() {
             <FormControl id="password" isInvalid={!!errors.password}>
               <FormLabel>Senha</FormLabel>
               <Input
+                placeholder="Digite sua senha"
                 focusBorderColor={PRIMARY_APP_COLOR}
                 type="password"
                 {...register('password', {

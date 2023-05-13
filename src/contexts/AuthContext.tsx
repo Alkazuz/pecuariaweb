@@ -1,5 +1,6 @@
 import Router from 'next/router'
-import React, { createContext, useState, useEffect } from 'react'
+import React, { createContext, useState, useEffect, use } from 'react'
+import { set } from 'react-hook-form'
 
 import Cookies from 'js-cookie'
 import api from 'services/api'
@@ -38,19 +39,35 @@ export const AuthProvider = ({
     setIsLogged(!!user)
   }, [user])
 
+  useEffect(() => {
+    const authToken = Cookies.get('authToken')
+    if (authToken) {
+      api
+        .get<User>('/user/me')
+        .then(({ data }) => setUser(data))
+        .catch(() => {
+          Cookies.remove('authToken')
+          Router.push('/')
+        })
+    }
+  }, [])
+
   const login = async (email: string, password: string) => {
-    const { data } = await api.post<LoginResponse>('/auth/login', {
-      email,
-      password
+    const request = api<LoginResponse>({
+      url: '/auth/login',
+      method: 'POST',
+      data: { email, password }
     })
+    const { data } = await request
     setUser(data.user)
     Cookies.set('authToken', data.token, { expires: 1 })
+    Router.push('/dashboard')
   }
 
   const logout = async () => {
     Cookies.remove('authToken')
     setUser(undefined)
-    await api.get('/auth/logout')
+    await api.post('/auth/logout')
     Router.push('/')
   }
 
