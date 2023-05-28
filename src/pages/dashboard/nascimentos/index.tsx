@@ -77,7 +77,7 @@ export default function Nascimentos() {
 
   return (
     <Sidebar>
-      <ChakraTable title="Nascimentos" columns={columns} data={data} />
+      <ChakraTable title="Nascimentos" columns={columns as any} data={data} />
     </Sidebar>
   )
 }
