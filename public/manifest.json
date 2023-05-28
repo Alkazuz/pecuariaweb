@@ -1,6 +1,6 @@
 {
-  "name": "App name",
-  "short_name": "APP",
+  "name": "Pecuária - Painel Web",
+  "short_name": "Pecuária Web",
   "icons": [
     {
       "src": "/img/bg.png",
@@ -14,7 +14,7 @@
     }
   ],
   "background_color": "#0c0f16",
-  "description": "App PWA",
+  "description": "Painel dashboard da pecuária",
   "display": "fullscreen",
   "start_url": "/",
   "theme_color": "#0c0f16"

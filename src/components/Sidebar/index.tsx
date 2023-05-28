@@ -1,9 +1,9 @@
 import React, { ReactNode, ReactText, useContext } from 'react'
 import { IconType } from 'react-icons'
+import { AiOutlineHeart } from 'react-icons/ai'
 import {
   FiHome,
   FiTrendingUp,
-  FiCompass,
   FiChevronDown,
   FiMenu,
   FiBell
@@ -39,11 +39,12 @@ import { APP_NAME } from '../../constants/app'
 interface LinkItemProps {
   name: string
   icon: IconType
+  href: string
 }
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'Início', icon: FiHome },
-  { name: 'Nascimentos', icon: FiTrendingUp },
-  { name: 'Mortalidades', icon: FiCompass }
+  { name: 'Início', icon: FiHome, href: '/dashboard' },
+  { name: 'Nascimentos', icon: FiTrendingUp, href: '/dashboard/nascimentos' },
+  { name: 'Mortalidades', icon: AiOutlineHeart, href: '#' }
 ]
 
 export function Sidebar({ children }: { children: ReactNode }) {
@@ -100,7 +101,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
+        <NavItem key={link.name} icon={link.icon} href={link.href}>
           {link.name}
         </NavItem>
       ))}
@@ -111,11 +112,12 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
 interface NavItemProps extends FlexProps {
   icon: IconType
   children: ReactText
+  href: string
 }
-const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
+const NavItem = ({ icon, children, href, ...rest }: NavItemProps) => {
   return (
     <Link
-      href="#"
+      href={href}
       style={{ textDecoration: 'none' }}
       _focus={{ boxShadow: 'none' }}
     >
