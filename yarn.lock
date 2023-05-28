@@ -2404,6 +2404,23 @@
   resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-7.6.0.tgz#9ea331766084288634a9247fcd8b84f16ff4ba07"
   integrity sha512-XK6BTq1NDMo9Xqw/YkYyGjSsg44fbNwYRx7QK2CuoQgyy+f1rrTDHoExVM5PsyXCtfl2vs2vVJ0MN0yN6LppRw==
 
+"@fontsource/open-sans@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/open-sans/-/open-sans-5.0.1.tgz#01123a667858f631059cafa6aa0b3d043c5fd6e1"
+  integrity sha512-lhgNXJDMmNzd0U02+xNRuBOyELZ0ZBOBLXcrX3ta5ccpUTZoL0XR0c4WkGh4Jow4yi7I1O8Cp6Nddc5p6XM7Eg==
+
+"@fontsource/raleway@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/raleway/-/raleway-5.0.1.tgz#5a04530d6f1077949b85f74fd0c8df980335af39"
+  integrity sha512-k63YnBzrKTxY1rqCkonQxk3sIdF1jBo92JzG2v0vLGVduNALcMovD0RrSGfu90YTqUEHhuEBirA9V6mQ5JCT5w==
+
+"@googlemaps/js-api-loader@^1.13.8":
+  version "1.15.2"
+  resolved "https://registry.yarnpkg.com/@googlemaps/js-api-loader/-/js-api-loader-1.15.2.tgz#470be4454f4f31d7575ef297d8752dd87975162b"
+  integrity sha512-8FJwvd1F5Zxs/kDuH/ESFwSjOY0ZyGVkPDyv2VmC9cg8n1vPUKmvZJh/EzoikC/Z5itGMTRfcxmvSapXAi0+zQ==
+  dependencies:
+    fast-deep-equal "^3.1.3"
+
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.5.0.tgz#1407967d4c6eecd7388f83acf1eaf4d0c6e58ef9"
@@ -2692,6 +2709,11 @@
   dependencies:
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
+
+"@mapbox/point-geometry@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@mapbox/point-geometry/-/point-geometry-0.1.0.tgz#8a83f9335c7860effa2eeeca254332aa0aeed8f2"
+  integrity sha512-6j56HdLTwWGO0fJPlrZtdU/B13q8Uwmo18Ck2GnGgN9PCFyKTZ3UbXeEdRFh18i9XQ92eH2VdtpJHpBD3aripQ==
 
 "@mdx-js/mdx@^1.6.22":
   version "1.6.22"
@@ -4234,6 +4256,13 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/google-map-react@^2.1.7":
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/@types/google-map-react/-/google-map-react-2.1.7.tgz#10992ecf0f161b2e8cbe647364decb31707db6af"
+  integrity sha512-7pquMUU20kVwbfEV91iAWXjApSkqoODkfUwTSmJpU9Tgd+ecX+MrQnplCqrSqKrPF1VjfvyWnDEicdoSd0G5qA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/graceful-fs@^4.1.2":
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/@types/graceful-fs/-/graceful-fs-4.1.5.tgz#21ffba0d98da4350db64891f92a9e5db3cdb4e15"
@@ -5401,10 +5430,10 @@ axe-core@^4.4.3:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.5.0.tgz#6efe2ecdba205fcc9d7ddb3d48c2cf630f70eb5e"
   integrity sha512-4+rr8eQ7+XXS5nZrKcMO/AikHL0hVqy+lHWAnE3xdHl+aguag8SOQ6eEqLexwLNWgXIMfunGuD3ON1/6Kyet0A==
 
-axios@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.1.3.tgz#8274250dada2edf53814ed7db644b9c2866c1e35"
-  integrity sha512-00tXVRwKx/FZr/IDVFt4C+f9FYairX517WoGCL6dpOntqLkZofjhu43F/Xl44UOpqa+9sLFDrG/XAnFsUYgkDA==
+axios@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.4.0.tgz#38a7bf1224cd308de271146038b551d725f0be1f"
+  integrity sha512-S4XCWMEmzvo64T9GfvQDOXgYRDJ/wsSZc7Jvdgx5u1sd0JwsuPLqb3SYmusag+edF6ziyMensPVqLTSc1PiSEA==
   dependencies:
     follow-redirects "^1.15.0"
     form-data "^4.0.0"
@@ -7961,6 +7990,11 @@ eventemitter2@6.4.7:
   resolved "https://registry.yarnpkg.com/eventemitter2/-/eventemitter2-6.4.7.tgz#a7f6c4d7abf28a14c1ef3442f21cb306a054271d"
   integrity sha512-tYUSVOGeQPKt/eC1ABfhHy5Xd96N3oIijJvN3O9+TsC28T5V9yX9oEfEK5faP0EFSNVOG97qtAS68GBrQB2hDg==
 
+eventemitter3@^4.0.4:
+  version "4.0.7"
+  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-4.0.7.tgz#2de9b68f6528d5644ef5c59526a1b4a07306169f"
+  integrity sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==
+
 events@^3.0.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/events/-/events-3.3.0.tgz#31a95ad0a924e2d2c419a813aeb2c4e878ea7400"
@@ -8973,6 +9007,16 @@ good-listener@^1.2.2:
   integrity sha1-1TswzfkxPf+33JoNR3CWqm0UXFA=
   dependencies:
     delegate "^3.1.2"
+
+google-map-react@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/google-map-react/-/google-map-react-2.2.1.tgz#54c45899966fb0000e04cde2d5ca44ad728bdba6"
+  integrity sha512-Dg8aexf5rNSmywj0XKQ5m4RNzVcWwKEM2BGDj5aPChD0um8ZRjB5Upcb/yg/i0oG1aES29asQ5+6BHVgrK5xGA==
+  dependencies:
+    "@googlemaps/js-api-loader" "^1.13.8"
+    "@mapbox/point-geometry" "^0.1.0"
+    eventemitter3 "^4.0.4"
+    prop-types "^15.7.2"
 
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.1.9, graceful-fs@^4.2.0, graceful-fs@^4.2.4:
   version "4.2.6"
