@@ -146,7 +146,7 @@ const ChakraTable = ({ columns, data, title }: ChakraTableProps<unknown>) => {
               variant="outline"
               backgroundColor={
                 table.getState().pagination.pageIndex === i
-                  ? 'blue.500'
+                  ? '#81b33b'
                   : undefined
               }
               color={
