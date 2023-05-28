@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { FaSortDown, FaSortUp } from 'react-icons/fa'
 
 import {
@@ -13,7 +13,6 @@ import {
 import {
   useReactTable,
   getCoreRowModel,
-  getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
   ColumnDef,
@@ -38,7 +37,8 @@ const ChakraTable = ({ columns, data, title }: ChakraTableProps<unknown>) => {
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
     getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel()
+    getPaginationRowModel: getPaginationRowModel(),
+    debugTable: true
   })
 
   const bg = useColorModeValue('white', 'gray.800')
@@ -75,7 +75,10 @@ const ChakraTable = ({ columns, data, title }: ChakraTableProps<unknown>) => {
                     header.column.columnDef.header,
                     header.getContext()
                   )}
-                  {header.column.getIsSorted() ? <FaSortDown /> : <FaSortUp />}
+                  {{
+                    asc: <FaSortUp />,
+                    desc: <FaSortDown />
+                  }[header.column.getIsSorted() as string] ?? null}
                 </Flex>
               </Box>
             ))}
