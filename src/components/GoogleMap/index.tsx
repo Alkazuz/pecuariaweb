@@ -10,7 +10,14 @@ import {
 } from '@chakra-ui/react'
 import GoogleMapReact from 'google-map-react'
 
-const PointComponent = ({ text }) => <FaMapMarkerAlt color="red" size={32} />
+type PointProps = {
+  lat: number
+  lng: number
+}
+
+const PointComponent = (props: PointProps) => (
+  <FaMapMarkerAlt color="red" size={32} />
+)
 
 type GoogleMapProp = {
   lat: number
@@ -50,7 +57,7 @@ export default function GoogleMap({
                 center={{ lat, lng }}
                 zoom={zoom}
               >
-                <PointComponent lat={lat} lng={lng} text="My Marker" />
+                <PointComponent lat={lat} lng={lng} />
               </GoogleMapReact>
             </div>
           </ModalBody>
