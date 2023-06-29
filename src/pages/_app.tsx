@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 
+import '../index.css'
 import { ChakraProvider } from '@chakra-ui/react'
 import { CHACKRA_UI_THEME } from 'constants/app'
 import { AuthProvider } from 'contexts/AuthContext'
